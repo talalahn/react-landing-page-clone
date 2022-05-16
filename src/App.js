@@ -3,9 +3,11 @@
 import { css } from '@emotion/react';
 import { ReactComponent as LogoPic } from './images/logoPic.svg';
 
+// import { ReactComponent as LogoText } from './images/logoText.svg';
+
 const pageBackgroundStyles = css`
   // need to change to that beautiful transition
-  display: flex;
+  /* display: flex; */
   background-color: #b762ff;
   background-image: linear-gradient(
     188deg,
@@ -21,16 +23,18 @@ const pageBackgroundStyles = css`
   );
   margin: 0;
   justify-content: center;
+  position: absolute;
+  width: 100vw;
 `;
 
 const mainSectionStyles = css`
-  /* display: flex; */
+  display: flex;
   color: #fff;
   background-color: #0042ff;
   border: 10px solid black;
   /* max-width: 100vw; */
   padding: 4rem 20px;
-  margin: 20px;
+  margin: 16px;
   justify-content: center;
 
   /* margin: 0 auto; */
@@ -43,22 +47,32 @@ const mainSectionContainerStyles = css`
 `;
 
 const brandLogosContainerStyles = css`
-  display: block;
-  width: 4.6rem;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
-  /* align-content: center; */
+  align-items: center;
+  justify-content: space-around;
+  /* height: 100vh; */
+`;
+
+const logoPicContainerStyles = css`
+  width: 60px;
+  height: 78px;
+  margin: auto;
+  /* padding: 20px; */
 `;
 
 const logoPicStyles = css`
   fill: #ffff00;
-  margin: auto;
-  padding: 20px;
 `;
+
+// const logoTextStyles = css`
+//   fill: #ffff00;
+// `;
 
 const draggableHeadingStyles = css`
   color: #ffff00;
-  font-size: 80px;
+  font-size: 70px;
   font-weight: 300;
 `;
 
@@ -73,20 +87,24 @@ const buttonContainerMainSectionStyles = css`
   display: flex;
   justify-content: center;
   align-content: center;
-
-  /* gap: 24px; */
-  margin: 0px 16px;
 `;
 const buttonMainSectionStyles = css`
-  padding: 8px 24px;
   color: #ffff00;
   background-color: #0032c2;
   font-weight: 700;
   font-size: 18px;
   text-decoration: none;
   padding: 8px 24px;
-  border: 0.3rem solid #ffff00;
+  border: 3px solid #ffff00;
   margin: 16px 0 0 16px;
+  box-shadow: 8px 8px 0 #0032c2;
+  line-height: 1;
+
+  :hover {
+    box-shadow: none;
+    transition: 240ms;
+    border: 3px solid #ffffff;
+  }
 `;
 const linkContainerMainSectionStyles = css`
   display: flex;
@@ -102,9 +120,16 @@ function App() {
       <section css={mainSectionStyles}>
         <div css={mainSectionContainerStyles}>
           <div css={brandLogosContainerStyles}>
-            <a css={logoPicStyles}>
-              <LogoPic />
-            </a>
+            <div css={logoPicContainerStyles}>
+              <a css={logoPicStyles}>
+                <LogoPic />
+              </a>
+            </div>
+            {/* <div css={logoPicContainerStyles}>
+              <a css={logoTextStyles}>
+                <LogoText />
+              </a>
+            </div> */}
             <h1 css={draggableHeadingStyles}>
               <em>draggable</em>
             </h1>
