@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { css } from '@emotion/react';
+// import { ReactComponent as Basics } from './images/basics.png';
 import { ReactComponent as LogoPic } from './images/logoPic.svg';
 import { ReactComponent as LogoText } from './images/logoText.svg';
 
@@ -23,22 +24,25 @@ const pageBackgroundStyles = css`
     #ff576f 100%
   );
   min-height: 100%;
+  cursor: url();
 `;
 
 const mainSectionStyles = css`
   display: flex;
+  flex-direction: column;
   color: #fff;
   background-color: #0042ff;
   border: 10px solid black;
   padding: 4rem 20px;
   margin: 16px;
   justify-content: center;
+  align-items: center;
 `;
 
 const mainSectionContainerStyles = css`
   display: flex;
   flex-direction: column;
-  /* margin: 0 auto; */
+  margin-bottom: 55px;
 `;
 
 const brandLogosContainerStyles = css`
@@ -141,11 +145,19 @@ const yellowSectionStyles = css`
   color: #fff;
   background-color: #ffd117;
   border: 10px solid black;
-  padding: 4rem 20px;
+  /* padding: 4rem 20px; */
+  padding: 224px 32px 0 32px;
   margin: -26px 16px 16px 16px;
   justify-content: center;
   z-index: 1;
 `;
+
+const basicsTopImageStyles = css`
+  width: 1110px;
+  margin-right: 20px;
+  margin-bottom: -269px;
+`;
+
 const turquoiseSectionStyles = css`
   display: flex;
   color: #fff;
@@ -187,9 +199,10 @@ const purpleSectionStyles = css`
 const coloredSectionContainerStyles = css`
   color: #000000;
   display: block;
-  margin: 251px;
+  /* margin: 251px; */
   justify-items: center;
   align-content: center;
+  max-width: 800px;
 `;
 
 const h1Elements = css`
@@ -197,6 +210,9 @@ const h1Elements = css`
   font-weight: 700;
   font-size: 64px;
   text-align: center;
+  margin-top: 0;
+  margin-bottom: 64px;
+  line-height: 1.3;
 `;
 const pElements = css`
   color: #000000;
@@ -204,6 +220,10 @@ const pElements = css`
   font-size: 24px;
   text-align: center;
   line-height: 1.6;
+`;
+
+const spanUnderlineStyles = css`
+  text-decoration: underline;
 `;
 
 function App() {
@@ -218,9 +238,9 @@ function App() {
               </a>
             </div>
             <div css={logoTextContainerStyles}>
-              <a css={logoTextStyles}>
+              <div css={logoTextStyles}>
                 <LogoText />
-              </a>
+              </div>
             </div>
           </div>
           <h2 css={headingMainSectionStyles}>
@@ -244,6 +264,9 @@ function App() {
             </a>
           </div>
         </div>
+        <div>
+          <img src="/images/basics_top.png" alt="" css={basicsTopImageStyles} />
+        </div>
       </section>
       <section css={yellowSectionStyles}>
         <div css={coloredSectionContainerStyles}>
@@ -254,6 +277,10 @@ function App() {
             basic, Draggable gives you drag &amp; drop functionality, fast DOM
             reordering, accessible markup, and a bundle of events to grab on to.
           </p>
+          <div css={logoTextContainerStyles}>
+            {/* <div css={logoTextStyles}> */}
+            {/* </div> */}
+          </div>
         </div>
       </section>
       <section css={turquoiseSectionStyles}>
@@ -296,6 +323,28 @@ function App() {
             continue to work on a reliable native solution, Draggable lends a
             helping hand. All draggable elements are focusable and provide
             customizable screen reader announcements.
+          </p>
+          <h1 css={h1Elements}>Extensible</h1>
+          <p css={pElements}>
+            Draggable is easy to extend. Write a custom module that provides the
+            functionality you need, then{' '}
+            <span css={spanUnderlineStyles}>submit it to our Github repo</span>
+            for review. If you needed a feature that wasn't already available,
+            chances are the community needs it too. Sharing is caring.
+          </p>
+          <h1 css={h1Elements}>Interaction</h1>
+          <p css={pElements}>
+            Draggable supports most of the interaction events we could think of:
+            mouse, touch, and force touch are all available out of the box, with
+            accessible keyboard support coming soon!
+          </p>
+          <h1 css={h1Elements}>Animation</h1>
+          <p css={pElements}>
+            Let's face it, it's annoying when plugins get in the way of your
+            personal design touch. Draggable isn't going to try and steal the
+            show by forcing any unruly animation styles on you. Simply take your
+            pick from our healthy serving of CSS selectors and style to your
+            heart's desire.
           </p>
         </div>
       </section>
