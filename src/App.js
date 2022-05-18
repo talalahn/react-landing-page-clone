@@ -59,6 +59,7 @@ const logoPicContainerStyles = css`
   height: 78px;
   margin: auto;
   margin-top: 8px;
+  cursor: url('/cursors/cursor-logo.png'), auto;
 `;
 
 const logoPicStyles = css`
@@ -86,6 +87,7 @@ const logoTextContainerStyles = css`
 
 const logoTextStyles = css`
   fill: #ffff00;
+  cursor: url('/cursors/cursor-logo.png'), auto;
 `;
 
 const headingMainSectionStyles = css`
@@ -94,6 +96,7 @@ const headingMainSectionStyles = css`
   display: flex;
   justify-content: center;
   margin-top: 16px;
+  cursor: url('/cursors/cursor-text.png'), auto;
 `;
 
 const buttonContainerMainSectionStyles = css`
